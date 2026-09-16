@@ -1,2033 +1,1788 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="PERRY Photography & Fashion Design — Professional photography and fashion design by Akinyosoye Praise.">
-
-    <meta name="author" content="Akinyosoye Praise (Perry)">
-
-    <title>PERRY | Photography & Fashion Design</title>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <style>
-
-        /* =========================================
-           RESET
-        ========================================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #050505;
-            color: #ffffff;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        button {
-            font-family: inherit;
-        }
-
-        :root {
-            --black: #050505;
-            --dark: #0b0b0b;
-            --gold: #d8ad5a;
-            --gold-light: #f1d18b;
-            --white: #ffffff;
-            --muted: #a6a6a6;
-            --border: rgba(216, 173, 90, 0.25);
-        }
-
-
-        /* =========================================
-           GLOBAL
-        ========================================= */
-
-        .container {
-            width: min(1150px, 90%);
-            margin: auto;
-        }
-
-        section {
-            padding: 110px 0;
-        }
-
-        .gold {
-            color: var(--gold);
-        }
-
-        .eyebrow {
-            color: var(--gold);
-            font-size: 12px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 18px;
-        }
-
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(42px, 6vw, 70px);
-            font-weight: 500;
-            line-height: 1;
-            margin-bottom: 25px;
-        }
-
-        .section-description {
-            color: var(--muted);
-            max-width: 650px;
-            font-size: 15px;
-        }
-
-        .section-heading {
-            margin-bottom: 55px;
-        }
-
-
-        /* =========================================
-           NAVBAR
-        ========================================= */
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            transition: 0.4s ease;
-        }
-
-        header.scrolled {
-            background: rgba(5, 5, 5, 0.94);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-
-        nav {
-            width: min(1200px, 92%);
-            margin: auto;
-            height: 85px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .nav-logo img {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-        }
-
-        .logo-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 25px;
-            letter-spacing: 4px;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 35px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #ddd;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-
-        .nav-button {
-            padding: 13px 22px;
-            border: 1px solid var(--gold);
-            color: var(--gold) !important;
-            transition: 0.3s;
-        }
-
-        .nav-button:hover {
-            background: var(--gold);
-            color: #000 !important;
-        }
-
-        .menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-
-        /* =========================================
-           HERO
-        ========================================= */
-
-        .hero {
-            min-height: 100vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(0,0,0,0.95) 0%,
-                    rgba(0,0,0,0.75) 45%,
-                    rgba(0,0,0,0.3) 100%
-                ),
-                url("images/hero.jpg") center/cover no-repeat;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            right: -200px;
-            top: 15%;
-            border-radius: 50%;
-            background: rgba(216,173,90,0.08);
-            filter: blur(100px);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 750px;
-            padding-top: 70px;
-        }
-
-        .hero-small {
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            font-size: 12px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(65px, 10vw, 130px);
-            font-weight: 500;
-            line-height: 0.85;
-            margin-bottom: 30px;
-        }
-
-        .hero h1 span {
-            color: var(--gold);
-            font-style: italic;
-        }
-
-        .hero-subtitle {
-            font-size: 18px;
-            max-width: 620px;
-            color: #d1d1d1;
-            margin-bottom: 35px;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 28px;
-            font-size: 12px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: 0.35s;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: var(--gold);
-            color: #000;
-        }
-
-        .btn-primary:hover {
-            background: var(--gold-light);
-            transform: translateY(-3px);
-        }
-
-        .btn-outline {
-            border: 1px solid rgba(255,255,255,0.4);
-            color: white;
-        }
-
-        .btn-outline:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-            transform: translateY(-3px);
-        }
-
-        .scroll-down {
-            position: absolute;
-            bottom: 35px;
-            left: 5%;
-            color: #aaa;
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            z-index: 2;
-        }
-
-
-        /* =========================================
-           SERVICES
-        ========================================= */
-
-        .services {
-            background: var(--dark);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .service-card {
-            border: 1px solid var(--border);
-            padding: 45px;
-            position: relative;
-            transition: 0.4s;
-            background: linear-gradient(
-                145deg,
-                rgba(255,255,255,0.025),
-                transparent
-            );
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--gold);
-        }
-
-        .service-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 70px;
-            color: rgba(216,173,90,0.15);
-            position: absolute;
-            top: 20px;
-            right: 25px;
-        }
-
-        .service-icon {
-            font-size: 30px;
-            margin-bottom: 25px;
-        }
-
-        .service-card h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 36px;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
-
-        .service-card p {
-            color: var(--muted);
-            font-size: 14px;
-            margin-bottom: 25px;
-        }
-
-        .service-list {
-            list-style: none;
-        }
-
-        .service-list li {
-            padding: 9px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            color: #ccc;
-            font-size: 13px;
-        }
-
-        .service-list li::before {
-            content: "✦";
-            color: var(--gold);
-            margin-right: 10px;
-        }
-
-
-        /* =========================================
-           BENEFITS
-        ========================================= */
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
-
-        .benefit {
-            padding: 25px 0;
-            border-top: 1px solid var(--border);
-        }
-
-        .benefit-number {
-            color: var(--gold);
-            font-size: 12px;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-        }
-
-        .benefit h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 29px;
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-
-        .benefit p {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-
-        /* =========================================
-           ABOUT
-        ========================================= */
-
-        .about {
-            background: var(--dark);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .about-image {
-            position: relative;
-        }
-
-        .about-image img {
-            width: 100%;
-            aspect-ratio: 4/5;
-            object-fit: cover;
-            filter: grayscale(15%);
-        }
-
-        .about-image::after {
-            content: "";
-            position: absolute;
-            width: 80%;
-            height: 80%;
-            border: 1px solid var(--gold);
-            left: 30px;
-            top: 30px;
-            z-index: -1;
-        }
-
-        .about-content h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(45px, 6vw, 70px);
-            font-weight: 500;
-            line-height: 1;
-            margin-bottom: 25px;
-        }
-
-        .about-content p {
-            color: var(--muted);
-            margin-bottom: 20px;
-            font-size: 15px;
-        }
-
-        .signature {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 32px;
-            color: var(--gold);
-            margin-top: 30px;
-        }
-
-
-        /* =========================================
-           PORTFOLIO
-        ========================================= */
-
-        .portfolio-heading {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            gap: 30px;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 15px;
-        }
-
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            min-height: 350px;
-            background: #111;
-        }
-
-        .portfolio-item:nth-child(1) {
-            grid-column: span 7;
-        }
-
-        .portfolio-item:nth-child(2) {
-            grid-column: span 5;
-        }
-
-        .portfolio-item:nth-child(3) {
-            grid-column: span 5;
-        }
-
-        .portfolio-item:nth-child(4) {
-            grid-column: span 7;
-        }
-
-        .portfolio-item:nth-child(5) {
-            grid-column: span 4;
-        }
-
-        .portfolio-item:nth-child(6) {
-            grid-column: span 4;
-        }
-
-        .portfolio-item:nth-child(7) {
-            grid-column: span 4;
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.7s;
-        }
-
-        .portfolio-item:hover img {
-            transform: scale(1.06);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                transparent 45%,
-                rgba(0,0,0,0.85)
-            );
-            display: flex;
-            align-items: end;
-            padding: 25px;
-            opacity: 0;
-            transition: 0.4s;
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-overlay span {
-            color: var(--gold);
-            text-transform: uppercase;
-            font-size: 10px;
-            letter-spacing: 3px;
-        }
-
-
-        /* =========================================
-           SOCIAL PROOF
-        ========================================= */
-
-        .proof {
-            background: var(--dark);
-            text-align: center;
-        }
-
-        .proof-content {
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .quote-mark {
-            color: var(--gold);
-            font-family: Georgia, serif;
-            font-size: 80px;
-            line-height: 0.5;
-            margin-bottom: 30px;
-        }
-
-        .proof-quote {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(30px, 4vw, 48px);
-            line-height: 1.2;
-            font-style: italic;
-            margin-bottom: 25px;
-        }
-
-        .proof-note {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-
-        /* =========================================
-           FAQ
-        ========================================= */
-
-        .faq {
-            max-width: 850px;
-            margin: auto;
-        }
-
-        .faq-item {
-            border-top: 1px solid rgba(255,255,255,0.12);
-        }
-
-        .faq-item:last-child {
-            border-bottom: 1px solid rgba(255,255,255,0.12);
-        }
-
-        .faq-question {
-            width: 100%;
-            padding: 25px 0;
-            background: none;
-            border: none;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-align: left;
-            cursor: pointer;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 25px;
-        }
-
-        .faq-question span:last-child {
-            color: var(--gold);
-            font-family: Arial, sans-serif;
-            font-size: 22px;
-            transition: 0.3s;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: 0.4s ease;
-        }
-
-        .faq-answer p {
-            color: var(--muted);
-            font-size: 14px;
-            padding-bottom: 25px;
-            max-width: 700px;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 200px;
-        }
-
-        .faq-item.active .faq-question span:last-child {
-            transform: rotate(45deg);
-        }
-
-
-        /* =========================================
-           CTA
-        ========================================= */
-
-        .cta {
-            position: relative;
-            text-align: center;
-            padding: 140px 20px;
-            overflow: hidden;
-            background:
-                linear-gradient(
-                    rgba(5,5,5,0.85),
-                    rgba(5,5,5,0.92)
-                ),
-                url("images/cta.jpg") center/cover no-repeat;
-        }
-
-        .cta::before {
-            content: "";
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            border: 1px solid rgba(216,173,90,0.15);
-            border-radius: 50%;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .cta h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(50px, 8vw, 90px);
-            line-height: 0.95;
-            font-weight: 500;
-            margin-bottom: 25px;
-        }
-
-        .cta p {
-            color: #bbb;
-            max-width: 600px;
-            margin: 0 auto 35px;
-        }
-
-        .whatsapp-note {
-            margin-top: 20px;
-            font-size: 11px;
-            color: #777;
-            letter-spacing: 1px;
-        }
-
-
-        /* =========================================
-           FOOTER
-        ========================================= */
-
-        footer {
-            padding: 50px 0 25px;
-            border-top: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .footer-top {
-            display: flex;
-            justify-content: space-between;
-            gap: 40px;
-            padding-bottom: 40px;
-        }
-
-        .footer-brand h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 35px;
-            font-weight: 500;
-            letter-spacing: 4px;
-        }
-
-        .footer-brand p {
-            color: var(--muted);
-            font-size: 12px;
-            margin-top: 8px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            font-size: 11px;
-            color: #aaa;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .footer-links a:hover {
-            color: var(--gold);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.07);
-            padding-top: 25px;
-            display: flex;
-            justify-content: space-between;
-            color: #666;
-            font-size: 11px;
-        }
-
-
-        /* =========================================
-           WHATSAPP FLOATING BUTTON
-        ========================================= */
-
-        .whatsapp {
-            position: fixed;
-            right: 25px;
-            bottom: 25px;
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            background: #25D366;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 999;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-            transition: 0.3s;
-        }
-
-        .whatsapp:hover {
-            transform: scale(1.1);
-        }
-
-        .whatsapp svg {
-            width: 28px;
-            height: 28px;
-            fill: white;
-        }
-
-
-        /* =========================================
-           ANIMATIONS
-        ========================================= */
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: 0.8s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-
-        /* =========================================
-           RESPONSIVE
-        ========================================= */
-
-        @media (max-width: 900px) {
-
-            .nav-links {
-                position: fixed;
-                top: 85px;
-                left: 0;
-                width: 100%;
-                background: rgba(5,5,5,0.98);
-                flex-direction: column;
-                padding: 35px;
-                gap: 25px;
-                transform: translateY(-150%);
-                transition: 0.4s;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .nav-links.active {
-                transform: translateY(0);
-            }
-
-            .menu-btn {
-                display: block;
-            }
-
-            .benefits-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 60px;
-            }
-
-            .about-image {
-                max-width: 600px;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-
-        @media (max-width: 650px) {
-
-            section {
-                padding: 80px 0;
-            }
-
-            .hero {
-                background-position: 65% center;
-            }
-
-            .hero h1 {
-                font-size: 70px;
-            }
-
-            .hero-subtitle {
-                font-size: 15px;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .service-card {
-                padding: 30px;
-            }
-
-            .service-card h3 {
-                font-size: 32px;
-            }
-
-            .portfolio-heading {
-                display: block;
-            }
-
-            .portfolio-grid {
-                display: grid;
-                grid-template-columns: 1fr;
-            }
-
-            .portfolio-item,
-            .portfolio-item:nth-child(n) {
-                grid-column: span 1;
-                min-height: 400px;
-            }
-
-            .portfolio-overlay {
-                opacity: 1;
-            }
-
-            .footer-top {
-                flex-direction: column;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .cta {
-                padding: 100px 20px;
-            }
-
-            .cta::before {
-                width: 350px;
-                height: 350px;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="PERRY — Professional Photography & Fashion Design by Akinyosoye Praise.">
+
+<title>PERRY — Photography & Fashion Design</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --black: #050505;
+    --soft-black: #0b0b0b;
+    --gold: #d7ad62;
+    --gold-light: #f1d28f;
+    --white: #f7f4ee;
+    --grey: #a7a7a7;
+    --line: rgba(215,173,98,.22);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1180px, 90%);
+    margin: auto;
+}
+
+section {
+    padding: 110px 0;
+}
+
+.gold {
+    color: var(--gold);
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(48px, 7vw, 85px);
+    font-weight: 500;
+    line-height: .9;
+}
+
+/* NAV */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: .4s;
+}
+
+header.scrolled {
+    background: rgba(5,5,5,.92);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+nav {
+    width: min(1200px, 92%);
+    height: 88px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    letter-spacing: 5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ccc;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-cta {
+    border: 1px solid var(--gold);
+    padding: 12px 18px;
+    color: var(--gold) !important;
+}
+
+.nav-cta:hover {
+    background: var(--gold);
+    color: #000 !important;
+}
+
+.menu {
+    display: none;
+    border: 0;
+    background: none;
+    color: white;
+    font-size: 27px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.92),
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.12)
+        ),
+        url("images/01.jpg") center/cover no-repeat;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        transparent 70%,
+        var(--black)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+}
+
+.hero-kicker {
+    color: var(--gold);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(72px, 11vw, 145px);
+    line-height: .76;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+
+.hero h1 em {
+    color: var(--gold);
+    font-weight: 400;
+}
+
+.hero-description {
+    max-width: 590px;
+    color: #d0d0d0;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 16px 27px;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    transition: .3s;
+    display: inline-block;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: #000;
+}
+
+.btn-gold:hover {
+    background: var(--gold-light);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 1px solid rgba(255,255,255,.35);
+}
+
+.btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 35px;
+    left: 5%;
+    z-index: 3;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+/* INTRO */
+
+.intro {
+    background: var(--black);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 80px;
+    align-items: end;
+}
+
+.intro-text {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(34px, 4vw, 54px);
+    line-height: 1.1;
+}
+
+.intro-side {
+    color: var(--grey);
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 520px;
+}
+
+/* SERVICES */
+
+.services {
+    background: var(--soft-black);
+}
+
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: end;
+    margin-bottom: 70px;
+}
+
+.service-header p {
+    max-width: 420px;
+    color: var(--grey);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--line);
+}
+
+.service {
+    padding: 50px 40px;
+    border-bottom: 1px solid var(--line);
+    transition: .4s;
+}
+
+.service:first-child {
+    border-right: 1px solid var(--line);
+}
+
+.service:hover {
+    background: rgba(215,173,98,.035);
+}
+
+.service-number {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+}
+
+.service h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.service p {
+    color: var(--grey);
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 430px;
+    margin-bottom: 25px;
+}
+
+.service ul {
+    list-style: none;
+}
+
+.service li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    color: #ccc;
+    font-size: 12px;
+}
+
+.service li::before {
+    content: "✦";
+    color: var(--gold);
+    margin-right: 10px;
+}
+
+/* BENEFITS */
+
+.benefits-grid {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+}
+
+.benefit {
+    border-top: 1px solid var(--line);
+    padding-top: 25px;
+}
+
+.benefit span {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.benefit h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin: 30px 0 15px;
+}
+
+.benefit p {
+    color: var(--grey);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* PORTFOLIO */
+
+.portfolio-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 60px;
+}
+
+.portfolio-heading p {
+    max-width: 400px;
+    color: var(--grey);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    gap: 12px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    background: #111;
+}
+
+.gallery-item:nth-child(1) {
+    grid-column: span 7;
+    height: 620px;
+}
+
+.gallery-item:nth-child(2) {
+    grid-column: span 5;
+    height: 620px;
+}
+
+.gallery-item:nth-child(3),
+.gallery-item:nth-child(4),
+.gallery-item:nth-child(5) {
+    grid-column: span 4;
+    height: 470px;
+}
+
+.gallery-item:nth-child(6) {
+    grid-column: span 7;
+    height: 560px;
+}
+
+.gallery-item:nth-child(7) {
+    grid-column: span 5;
+    height: 560px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .7s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+.gallery-label {
+    position: absolute;
+    left: 25px;
+    bottom: 22px;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 9px;
+    color: white;
+}
+
+.gallery-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        transparent 45%,
+        rgba(0,0,0,.75)
+    );
+}
+
+/* ABOUT */
+
+.about {
+    background: var(--soft-black);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 90px;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.about-image::before {
+    content: "";
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    border: 1px solid var(--gold);
+    left: -20px;
+    top: -20px;
+}
+
+.about-copy h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(52px,7vw,90px);
+    font-weight: 500;
+    line-height: .85;
+    margin-bottom: 30px;
+}
+
+.about-copy p {
+    color: var(--grey);
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+    max-width: 600px;
+}
+
+.signature {
+    color: var(--gold);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    font-style: italic;
+    margin-top: 30px;
+}
+
+/* AUDIENCE */
+
+.audience {
+    text-align: center;
+}
+
+.audience p {
+    max-width: 650px;
+    margin: 25px auto 50px;
+    color: var(--grey);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.audience-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.audience-list span {
+    border: 1px solid var(--line);
+    padding: 13px 20px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ccc;
+}
+
+/* FAQ */
+
+.faq-wrap {
+    max-width: 850px;
+    margin: 60px auto 0;
+}
+
+.faq-item {
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.faq-item:last-child {
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.faq-question {
+    width: 100%;
+    border: 0;
+    background: none;
+    color: white;
+    padding: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    cursor: pointer;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+}
+
+.faq-question span:last-child {
+    color: var(--gold);
+    transition: .3s;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.faq-answer p {
+    color: var(--grey);
+    font-size: 13px;
+    line-height: 1.8;
+    padding-bottom: 25px;
+    max-width: 700px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 180px;
+}
+
+.faq-item.active .faq-question span:last-child {
+    transform: rotate(45deg);
+}
+
+/* CTA */
+
+.cta {
+    text-align: center;
+    padding: 150px 20px;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.72),
+            rgba(0,0,0,.9)
+        ),
+        url("images/06.jpg") center/cover;
+}
+
+.cta h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(60px,9vw,110px);
+    font-weight: 500;
+    line-height: .85;
+    margin-bottom: 30px;
+}
+
+.cta p {
+    max-width: 600px;
+    margin: auto auto 35px;
+    color: #c5c5c5;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid rgba(255,255,255,.08);
+    padding: 50px 0 25px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 40px;
+}
+
+.footer-name {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 35px;
+    letter-spacing: 4px;
+}
+
+.footer-desc {
+    color: var(--grey);
+    font-size: 11px;
+    margin-top: 8px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #aaa;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.07);
+    padding-top: 25px;
+    color: #666;
+    font-size: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* WHATSAPP */
+
+.whatsapp {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25d366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    box-shadow: 0 10px 35px rgba(0,0,0,.5);
+    transition: .3s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp svg {
+    width: 27px;
+    fill: white;
+}
+
+/* ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: .8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:900px) {
+
+    .menu {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 88px;
+        left: 0;
+        width: 100%;
+        background: #050505;
+        flex-direction: column;
+        padding: 35px;
+        transform: translateY(-150%);
+        transition: .4s;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+    }
+
+    .intro-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service:first-child {
+        border-right: 0;
+    }
+}
+
+@media(max-width:650px) {
+
+    section {
+        padding: 85px 0;
+    }
+
+    .hero {
+        background-position: 65% center;
+    }
+
+    .hero h1 {
+        font-size: 72px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        text-align: center;
+        width: 100%;
+    }
+
+    .service-header,
+    .portfolio-heading {
+        display: block;
+    }
+
+    .service-header p,
+    .portfolio-heading p {
+        margin-top: 25px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        display: block;
+    }
+
+    .gallery-item,
+    .gallery-item:nth-child(n) {
+        height: 480px;
+        margin-bottom: 12px;
+    }
+
+    .about-image {
+        margin-left: 20px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cta {
+        padding: 100px 20px;
+    }
+
+}
+
+</style>
 </head>
-
 
 <body>
 
-
-<!-- =========================================
-     NAVIGATION
-========================================= -->
-
 <header id="header">
 
-    <nav>
+<nav>
 
-        <a href="#home" class="nav-logo">
+<a href="#home" class="brand">
 
-            <!-- YOUR LOGO -->
-            <img src="logo.png" alt="PERRY Photography and Fashion Design Logo">
+<img src="logo.png" alt="PERRY logo">
 
-            <span class="logo-text">PERRY</span>
+<span class="brand-name">PERRY</span>
 
-        </a>
+</a>
 
+<button class="menu" id="menu">
+☰
+</button>
 
-        <button class="menu-btn" id="menuBtn">
-            ☰
-        </button>
+<ul class="nav-links" id="navLinks">
 
+<li><a href="#home">Home</a></li>
 
-        <ul class="nav-links" id="navLinks">
+<li><a href="#services">Services</a></li>
 
-            <li>
-                <a href="#home">Home</a>
-            </li>
+<li><a href="#work">Work</a></li>
 
-            <li>
-                <a href="#services">Services</a>
-            </li>
+<li><a href="#about">About</a></li>
 
-            <li>
-                <a href="#work">Work</a>
-            </li>
+<li><a href="#faq">FAQ</a></li>
 
-            <li>
-                <a href="#about">About</a>
-            </li>
+<li>
+<a
+href="https://wa.me/2348106568038?text=Hello%20Perry%2C%20I%27d%20like%20to%20book%20a%20session."
+target="_blank"
+class="nav-cta">
+Book a Session
+</a>
+</li>
 
-            <li>
-                <a href="#faq">FAQ</a>
-            </li>
+</ul>
 
-            <li>
-                <a
-                    href="https://wa.me/2348106568038"
-                    target="_blank"
-                    class="nav-button"
-                >
-                    Book a Session
-                </a>
-            </li>
-
-        </ul>
-
-    </nav>
+</nav>
 
 </header>
 
 
-
-<!-- =========================================
-     HERO
-========================================= -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
-    <div class="container">
+<div class="container">
 
-        <div class="hero-content reveal">
+<div class="hero-content reveal">
 
-            <div class="hero-small">
-                Photography • Fashion • Creative Direction
-            </div>
+<div class="hero-kicker">
+Photography • Fashion Design
+</div>
 
-            <h1>
-                Your Vision.<br>
-                <span>Captured.</span>
-            </h1>
+<h1>
+Your Vision.<br>
+<em>Beautifully</em><br>
+Captured.
+</h1>
 
-            <p class="hero-subtitle">
-                Professional photography and fashion design
-                created to help individuals and brands look
-                professional, memorable and impossible to ignore.
-            </p>
+<p class="hero-description">
+I create professional photography and fashion designs
+that help individuals and businesses look confident,
+memorable and ready to be seen.
+</p>
 
-            <div class="hero-actions">
+<div class="buttons">
 
-                <a
-                    href="https://wa.me/2348106568038"
-                    target="_blank"
-                    class="btn btn-primary"
-                >
-                    Book a Session
-                </a>
+<a
+class="btn btn-gold"
+href="https://wa.me/2348106568038?text=Hello%20Perry%2C%20I%27d%20like%20to%20book%20a%20session."
+target="_blank">
+Book a Session
+</a>
 
-                <a
-                    href="#work"
-                    class="btn btn-outline"
-                >
-                    View My Work
-                </a>
+<a class="btn btn-outline" href="#work">
+Explore My Work
+</a>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
-
-    <div class="scroll-down">
-        Scroll to explore ↓
-    </div>
+<div class="hero-bottom">
+PERRY — Photography & Fashion
+</div>
 
 </section>
 
 
+<!-- INTRO -->
 
-<!-- =========================================
-     SERVICES
-========================================= -->
+<section class="intro">
+
+<div class="container">
+
+<div class="intro-grid reveal">
+
+<p class="intro-text">
+I don't just create images.
+<span class="gold">I create presence.</span>
+</p>
+
+<p class="intro-side">
+Your image matters. Whether you're an individual,
+fashion brand, clothing business or event organizer,
+I help you communicate quality through photography
+and fashion.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
 
 <section class="services" id="services">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-heading reveal">
+<div class="service-header reveal">
 
-            <div class="eyebrow">
-                What I Offer
-            </div>
+<div>
 
-            <h2 class="section-title">
-                Creative Services<br>
-                <span class="gold">Built Around You.</span>
-            </h2>
+<div class="eyebrow">
+What I Do
+</div>
 
-            <p class="section-description">
-                Whether you're building a brand, celebrating a moment,
-                or expressing your personal style, I create work around
-                your vision and purpose.
-            </p>
+<h2 class="section-title">
+Creative<br>
+<span class="gold">Services.</span>
+</h2>
 
-        </div>
+</div>
 
+<p>
+Every project starts with your vision. I listen,
+understand what you're trying to achieve and create
+work designed around that purpose.
+</p>
 
-        <div class="services-grid">
-
-
-            <!-- Photography -->
-
-            <div class="service-card reveal">
-
-                <div class="service-number">
-                    01
-                </div>
-
-                <div class="service-icon">
-                    📸
-                </div>
-
-                <h3>
-                    Professional<br>
-                    Photography
-                </h3>
-
-                <p>
-                    High-quality photography designed to present
-                    you, your products, your brand and your moments
-                    in the best possible way.
-                </p>
-
-                <ul class="service-list">
-
-                    <li>
-                        Portrait Photography
-                    </li>
-
-                    <li>
-                        Fashion & Editorial Photography
-                    </li>
-
-                    <li>
-                        Event Photography
-                    </li>
-
-                    <li>
-                        Product Photography
-                    </li>
-
-                </ul>
-
-            </div>
+</div>
 
 
-            <!-- Fashion -->
+<div class="services-grid">
 
-            <div class="service-card reveal">
+<div class="service reveal">
 
-                <div class="service-number">
-                    02
-                </div>
+<div class="service-number">
+01 / PHOTOGRAPHY
+</div>
 
-                <div class="service-icon">
-                    ✂
-                </div>
+<h3>
+Professional<br>
+Photography
+</h3>
 
-                <h3>
-                    Fashion<br>
-                    Design
-                </h3>
+<p>
+Professional imagery for people, products,
+brands and moments that deserve to be remembered.
+</p>
 
-                <p>
-                    Fashion pieces created with attention to detail,
-                    individuality and the vision behind the person
-                    wearing them.
-                </p>
+<ul>
 
-                <ul class="service-list">
+<li>Portrait Photography</li>
 
-                    <li>
-                        Custom Outfits
-                    </li>
+<li>Fashion & Editorial Photography</li>
 
-                    <li>
-                        Ready-to-Wear Pieces
-                    </li>
+<li>Event Photography</li>
 
-                    <li>
-                        Fashion Concepts
-                    </li>
+<li>Product Photography</li>
 
-                    <li>
-                        Creative Styling
-                    </li>
+</ul>
 
-                </ul>
+</div>
 
-            </div>
 
-        </div>
+<div class="service reveal">
 
-    </div>
+<div class="service-number">
+02 / FASHION
+</div>
+
+<h3>
+Fashion<br>
+Design
+</h3>
+
+<p>
+Custom and ready-to-wear fashion pieces created
+with attention to detail and individuality.
+</p>
+
+<ul>
+
+<li>Custom Outfits</li>
+
+<li>Ready-to-Wear Pieces</li>
+
+<li>Fashion Concepts</li>
+
+<li>Creative Styling</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
+<!-- BENEFITS -->
 
-<!-- =========================================
-     BENEFITS
-========================================= -->
+<section>
 
-<section id="benefits">
+<div class="container">
 
-    <div class="container">
+<div class="reveal">
 
-        <div class="section-heading reveal">
+<div class="eyebrow">
+Why PERRY
+</div>
 
-            <div class="eyebrow">
-                Why Work With Me
-            </div>
+<h2 class="section-title">
+Designed To<br>
+<span class="gold">Make You Stand Out.</span>
+</h2>
 
-            <h2 class="section-title">
-                More Than Just<br>
-                <span class="gold">Beautiful Work.</span>
-            </h2>
-
-        </div>
+</div>
 
 
-        <div class="benefits-grid">
+<div class="benefits-grid">
+
+<div class="benefit reveal">
+
+<span>01 / PROFESSIONAL</span>
+
+<h3>
+Look Professional
+</h3>
+
+<p>
+Present yourself and your business with visuals
+that communicate quality and credibility.
+</p>
+
+</div>
 
 
-            <div class="benefit reveal">
+<div class="benefit reveal">
 
-                <div class="benefit-number">
-                    01 / PROFESSIONAL
-                </div>
+<span>02 / MEMORABLE</span>
 
-                <h3>
-                    Look More Professional
-                </h3>
+<h3>
+Be Remembered
+</h3>
 
-                <p>
-                    Present yourself and your business with visuals
-                    that communicate quality and credibility.
-                </p>
+<p>
+Create photographs that capture attention and
+leave a lasting impression.
+</p>
 
-            </div>
+</div>
 
 
-            <div class="benefit reveal">
+<div class="benefit reveal">
 
-                <div class="benefit-number">
-                    02 / MEMORABLE
-                </div>
+<span>03 / VISIBILITY</span>
 
-                <h3>
-                    Create Memorable Images
-                </h3>
+<h3>
+Get Seen
+</h3>
 
-                <p>
-                    Turn important moments, people and products
-                    into images worth remembering.
-                </p>
+<p>
+Build a stronger visual presence for your brand
+and business.
+</p>
 
-            </div>
+</div>
 
 
-            <div class="benefit reveal">
+<div class="benefit reveal">
 
-                <div class="benefit-number">
-                    03 / GROWTH
-                </div>
+<span>04 / SOCIAL</span>
 
-                <h3>
-                    Get Seen
-                </h3>
+<h3>
+Stand Out Online
+</h3>
 
-                <p>
-                    Build a stronger visual presence that helps
-                    your business communicate what it offers.
-                </p>
+<p>
+Give your social platforms quality content that
+makes people stop and pay attention.
+</p>
 
-            </div>
+</div>
 
+</div>
 
-            <div class="benefit reveal">
-
-                <div class="benefit-number">
-                    04 / SOCIAL
-                </div>
-
-                <h3>
-                    Stand Out Online
-                </h3>
-
-                <p>
-                    Create visual content that gives your social
-                    platforms a stronger and more professional look.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-
-<!-- =========================================
-     ABOUT
-========================================= -->
-
-<section class="about" id="about">
-
-    <div class="container">
-
-        <div class="about-grid">
-
-
-            <div class="about-image reveal">
-
-                <!-- Replace with your own portrait -->
-                <img
-                    src="images/about.jpg"
-                    alt="Akinyosoye Praise - Perry"
-                >
-
-            </div>
-
-
-            <div class="about-content reveal">
-
-                <div class="eyebrow">
-                    About PERRY
-                </div>
-
-                <h2>
-                    Meet <span class="gold">Praise.</span>
-                </h2>
-
-                <p>
-                    My name is <strong>Akinyosoye Praise</strong>,
-                    also known as <strong>Perry</strong>.
-                </p>
-
-                <p>
-                    I’m a professional photographer and fashion designer
-                    passionate about creating quality visuals and designs
-                    that help people and brands stand out.
-                </p>
-
-                <p>
-                    I believe great creative work starts with understanding
-                    the vision behind the client. That's why I focus on
-                    listening, paying attention to detail and delivering
-                    work that represents the person or brand behind it.
-                </p>
-
-                <p>
-                    Whether you're looking to create memorable images,
-                    present your business professionally or build a
-                    stronger visual presence online, I'm here to bring
-                    your ideas to life.
-                </p>
-
-                <div class="signature">
-                    — Praise (Perry)
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     PORTFOLIO
-========================================= -->
+<!-- PORTFOLIO -->
 
 <section id="work">
 
-    <div class="container">
+<div class="container">
 
-        <div class="portfolio-heading section-heading reveal">
+<div class="portfolio-heading reveal">
 
-            <div>
+<div>
 
-                <div class="eyebrow">
-                    Selected Work
-                </div>
+<div class="eyebrow">
+Selected Work
+</div>
 
-                <h2 class="section-title">
-                    Work That<br>
-                    <span class="gold">Speaks.</span>
-                </h2>
+<h2 class="section-title">
+A Look At<br>
+<span class="gold">My Work.</span>
+</h2>
 
-            </div>
+</div>
 
-            <p class="section-description">
-                A selection of photography and fashion work.
-                Replace these images with your best projects.
-            </p>
+<p>
+A selection of photography and fashion work.
+Every image represents the level of quality
+associated with PERRY.
+</p>
 
-        </div>
-
-
-        <div class="portfolio-grid">
+</div>
 
 
-            <div class="portfolio-item reveal">
-
-                <img
-                    src="images/work-1.jpg"
-                    alt="Perry Photography - Fashion"
-                >
-
-                <div class="portfolio-overlay">
-                    <span>Fashion Photography</span>
-                </div>
-
-            </div>
+<div class="gallery">
 
 
-            <div class="portfolio-item reveal">
+<div class="gallery-item reveal">
 
-                <img
-                    src="images/work-2.jpg"
-                    alt="Perry Photography - Portrait"
-                >
+<img src="images/01.jpg" alt="PERRY Photography">
 
-                <div class="portfolio-overlay">
-                    <span>Portrait</span>
-                </div>
+<span class="gallery-label">
+Photography
+</span>
 
-            </div>
+</div>
 
 
-            <div class="portfolio-item reveal">
+<div class="gallery-item reveal">
 
-                <img
-                    src="images/work-3.jpg"
-                    alt="Perry Photography - Event"
-                >
+<img src="images/02.jpg" alt="PERRY Portrait">
 
-                <div class="portfolio-overlay">
-                    <span>Event Photography</span>
-                </div>
+<span class="gallery-label">
+Portrait
+</span>
 
-            </div>
+</div>
 
 
-            <div class="portfolio-item reveal">
+<div class="gallery-item reveal">
 
-                <img
-                    src="images/work-4.jpg"
-                    alt="Perry Photography - Fashion Editorial"
-                >
+<img src="images/03.jpg" alt="PERRY Fashion">
 
-                <div class="portfolio-overlay">
-                    <span>Fashion Editorial</span>
-                </div>
+<span class="gallery-label">
+Fashion
+</span>
 
-            </div>
+</div>
 
 
-            <div class="portfolio-item reveal">
+<div class="gallery-item reveal">
 
-                <img
-                    src="images/work-5.jpg"
-                    alt="Perry Photography - Product"
-                >
+<img src="images/04.jpg" alt="PERRY Event Photography">
 
-                <div class="portfolio-overlay">
-                    <span>Product Photography</span>
-                </div>
+<span class="gallery-label">
+Events
+</span>
 
-            </div>
+</div>
 
 
-            <div class="portfolio-item reveal">
+<div class="gallery-item reveal">
 
-                <img
-                    src="images/work-6.jpg"
-                    alt="Perry Fashion Design"
-                >
+<img src="images/05.jpg" alt="PERRY Creative Photography">
 
-                <div class="portfolio-overlay">
-                    <span>Fashion Design</span>
-                </div>
+<span class="gallery-label">
+Creative
+</span>
 
-            </div>
+</div>
 
 
-            <div class="portfolio-item reveal">
+<div class="gallery-item reveal">
 
-                <img
-                    src="images/work-7.jpg"
-                    alt="Perry Creative Work"
-                >
+<img src="images/06.jpg" alt="PERRY Fashion Design">
 
-                <div class="portfolio-overlay">
-                    <span>Creative Work</span>
-                </div>
+<span class="gallery-label">
+Fashion Design
+</span>
 
-            </div>
+</div>
 
 
-        </div>
+<div class="gallery-item reveal">
 
-    </div>
+<img src="images/07.jpg" alt="PERRY Editorial Photography">
+
+<span class="gallery-label">
+Editorial
+</span>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
+<!-- ABOUT -->
 
-<!-- =========================================
-     SOCIAL PROOF
-========================================= -->
+<section class="about" id="about">
 
-<section class="proof">
+<div class="container">
 
-    <div class="container">
+<div class="about-grid">
 
-        <div class="proof-content reveal">
+<div class="about-image reveal">
 
-            <div class="eyebrow">
-                The PERRY Experience
-            </div>
+<img
+src="images/02.jpg"
+alt="Akinyosoye Praise — PERRY">
 
-            <div class="quote-mark">
-                “
-            </div>
+</div>
 
-            <p class="proof-quote">
-                Every project starts with understanding your vision
-                and ends with work designed to represent you at your best.
-            </p>
 
-            <p class="proof-note">
-                Quality • Professionalism • Your Vision
-            </p>
+<div class="about-copy reveal">
 
-        </div>
+<div class="eyebrow">
+About PERRY
+</div>
 
-    </div>
+<h2>
+Meet<br>
+<span class="gold">Praise.</span>
+</h2>
+
+<p>
+My name is <strong>Akinyosoye Praise</strong>,
+also known as <strong>Perry</strong>.
+</p>
+
+<p>
+I'm a professional photographer and fashion designer
+passionate about creating quality visuals and designs
+that help people and brands stand out.
+</p>
+
+<p>
+I believe the best creative work starts by
+understanding the client's vision. That's why
+professionalism, attention to detail and quality
+are at the heart of everything I do.
+</p>
+
+<p>
+My goal is simple: help you present yourself,
+your brand or your moment in a way that makes
+people pay attention.
+</p>
+
+<div class="signature">
+Praise "Perry"
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
+<!-- WHO I WORK WITH -->
 
-<!-- =========================================
-     FAQ
-========================================= -->
+<section class="audience">
+
+<div class="container reveal">
+
+<div class="eyebrow">
+Who I Work With
+</div>
+
+<h2 class="section-title">
+For People & Brands<br>
+<span class="gold">Ready To Be Seen.</span>
+</h2>
+
+<p>
+I work with individuals and businesses that understand
+the value of presenting themselves professionally.
+</p>
+
+<div class="audience-list">
+
+<span>Fashion Brands</span>
+
+<span>Clothing Businesses</span>
+
+<span>Individuals</span>
+
+<span>Event Organizers</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
 
 <section id="faq">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-heading reveal">
+<div class="reveal">
 
-            <div class="eyebrow">
-                FAQ
-            </div>
+<div class="eyebrow">
+FAQ
+</div>
 
-            <h2 class="section-title">
-                Frequently Asked<br>
-                <span class="gold">Questions.</span>
-            </h2>
+<h2 class="section-title">
+Before We<br>
+<span class="gold">Create.</span>
+</h2>
 
-        </div>
+</div>
 
 
-        <div class="faq">
+<div class="faq-wrap">
 
 
-            <!-- FAQ 1 -->
+<div class="faq-item reveal">
 
-            <div class="faq-item reveal">
+<button class="faq-question">
 
-                <button class="faq-question">
+<span>
+What type of photography do you offer?
+</span>
 
-                    <span>
-                        What types of photography do you offer?
-                    </span>
+<span>+</span>
 
-                    <span>
-                        +
-                    </span>
+</button>
 
-                </button>
+<div class="faq-answer">
 
-                <div class="faq-answer">
+<p>
+I offer portrait, fashion/editorial,
+event and product photography.
+</p>
 
-                    <p>
-                        I offer portrait photography, fashion and
-                        editorial photography, event photography and
-                        product photography.
-                    </p>
+</div>
 
-                </div>
+</div>
 
-            </div>
 
+<div class="faq-item reveal">
 
-            <!-- FAQ 2 -->
+<button class="faq-question">
 
-            <div class="faq-item reveal">
+<span>
+Do you work with businesses?
+</span>
 
-                <button class="faq-question">
+<span>+</span>
 
-                    <span>
-                        Do you work with businesses?
-                    </span>
+</button>
 
-                    <span>
-                        +
-                    </span>
+<div class="faq-answer">
 
-                </button>
+<p>
+Yes. I work with fashion brands,
+clothing businesses, event organizers
+and individuals.
+</p>
 
-                <div class="faq-answer">
+</div>
 
-                    <p>
-                        Yes. I work with fashion brands, clothing
-                        businesses, event organizers and individuals
-                        who need professional visual content.
-                    </p>
+</div>
 
-                </div>
 
-            </div>
+<div class="faq-item reveal">
 
+<button class="faq-question">
 
-            <!-- FAQ 3 -->
+<span>
+Do you make custom outfits?
+</span>
 
-            <div class="faq-item reveal">
+<span>+</span>
 
-                <button class="faq-question">
+</button>
 
-                    <span>
-                        Do you make custom outfits?
-                    </span>
+<div class="faq-answer">
 
-                    <span>
-                        +
-                    </span>
+<p>
+Yes. I offer custom outfit creation
+as well as ready-to-wear fashion pieces.
+</p>
 
-                </button>
+</div>
 
-                <div class="faq-answer">
+</div>
 
-                    <p>
-                        Yes. I offer custom outfit creation as well
-                        as ready-to-wear fashion pieces.
-                    </p>
 
-                </div>
+<div class="faq-item reveal">
 
-            </div>
+<button class="faq-question">
 
+<span>
+Can I bring my own idea for a shoot?
+</span>
 
-            <!-- FAQ 4 -->
+<span>+</span>
 
-            <div class="faq-item reveal">
+</button>
 
-                <button class="faq-question">
+<div class="faq-answer">
 
-                    <span>
-                        Can I bring my own idea for a photoshoot?
-                    </span>
+<p>
+Absolutely. Understanding your vision is
+a major part of my creative process.
+</p>
 
-                    <span>
-                        +
-                    </span>
+</div>
 
-                </button>
+</div>
 
-                <div class="faq-answer">
 
-                    <p>
-                        Absolutely. Understanding your vision is an
-                        important part of my creative process. We can
-                        discuss your ideas and build the shoot around
-                        the result you want.
-                    </p>
+<div class="faq-item reveal">
 
-                </div>
+<button class="faq-question">
 
-            </div>
+<span>
+How do I book a session?
+</span>
 
+<span>+</span>
 
-            <!-- FAQ 5 -->
+</button>
 
-            <div class="faq-item reveal">
+<div class="faq-answer">
 
-                <button class="faq-question">
+<p>
+Click any "Book a Session" button.
+It will open WhatsApp so we can discuss
+your project and availability.
+</p>
 
-                    <span>
-                        How do I book a session?
-                    </span>
+</div>
 
-                    <span>
-                        +
-                    </span>
+</div>
 
-                </button>
 
-                <div class="faq-answer">
+</div>
 
-                    <p>
-                        Simply click the “Book a Session” button and
-                        send me a message on WhatsApp. We can discuss
-                        your project, requirements and availability.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-
-<!-- =========================================
-     FINAL CTA
-========================================= -->
+<!-- CTA -->
 
 <section class="cta">
 
-    <div class="cta-content reveal">
+<div class="container reveal">
 
-        <div class="eyebrow">
-            Let's Create
-        </div>
+<div class="eyebrow">
+Let's Work Together
+</div>
 
-        <h2>
-            Your Vision.<br>
-            <span class="gold">My Creativity.</span>
-        </h2>
+<h2>
+Your Vision.<br>
+<span class="gold">My Creativity.</span>
+</h2>
 
-        <p>
-            Whether you need professional photography, fashion design,
-            or visual content that helps your business stand out,
-            let's create something that represents you.
-        </p>
+<p>
+Ready to create something professional,
+memorable and uniquely yours?
+</p>
 
-        <a
-            href="https://wa.me/2348106568038"
-            target="_blank"
-            class="btn btn-primary"
-        >
-            Book a Session
-        </a>
+<a
+class="btn btn-gold"
+href="https://wa.me/2348106568038?text=Hello%20Perry%2C%20I%27d%20like%20to%20book%20a%20session."
+target="_blank">
+Book a Session
+</a>
 
-        <div class="whatsapp-note">
-            Available for photography & fashion design inquiries
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-
-<!-- =========================================
-     FOOTER
-========================================= -->
+<!-- FOOTER -->
 
 <footer>
 
-    <div class="container">
+<div class="container">
 
-        <div class="footer-top">
+<div class="footer-top">
 
-            <div class="footer-brand">
+<div>
 
-                <h3>
-                    PERRY
-                </h3>
+<div class="footer-name">
+PERRY
+</div>
 
-                <p>
-                    Photography & Fashion Design
-                </p>
+<div class="footer-desc">
+Photography & Fashion Design
+</div>
 
-            </div>
-
-
-            <div class="footer-links">
-
-                <a href="#home">
-                    Home
-                </a>
-
-                <a href="#services">
-                    Services
-                </a>
-
-                <a href="#work">
-                    Work
-                </a>
-
-                <a href="#about">
-                    About
-                </a>
-
-                <a href="#faq">
-                    FAQ
-                </a>
-
-                <a
-                    href="https://wa.me/2348106568038"
-                    target="_blank"
-                >
-                    WhatsApp
-                </a>
-
-            </div>
-
-        </div>
+</div>
 
 
-        <div class="footer-bottom">
+<div class="footer-links">
 
-            <span>
-                © <span id="year"></span> PERRY. All rights reserved.
-            </span>
+<a href="#home">Home</a>
 
-            <span>
-                Akinyosoye Praise
-            </span>
+<a href="#services">Services</a>
 
-        </div>
+<a href="#work">Work</a>
 
-    </div>
+<a href="#about">About</a>
+
+<a href="#faq">FAQ</a>
+
+<a
+href="https://wa.me/2348106568038"
+target="_blank">
+WhatsApp
+</a>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>
+© <span id="year"></span> PERRY
+</span>
+
+<span>
+Akinyosoye Praise
+</span>
+
+</div>
+
+</div>
 
 </footer>
 
 
-
-<!-- =========================================
-     FLOATING WHATSAPP
-========================================= -->
+<!-- WHATSAPP -->
 
 <a
-    href="https://wa.me/2348106568038"
-    target="_blank"
-    class="whatsapp"
-    aria-label="Chat with Perry on WhatsApp"
->
+class="whatsapp"
+href="https://wa.me/2348106568038?text=Hello%20Perry%2C%20I%27d%20like%20to%20book%20a%20session."
+target="_blank"
+aria-label="Chat with Perry on WhatsApp">
 
-    <svg
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-    >
+<svg viewBox="0 0 24 24">
 
-        <path d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0C5.55 0 .24 5.31.24 11.84c0 2.09.55 4.13 1.6 5.93L.16 24l6.38-1.67a11.84 11.84 0 0 0 5.54 1.4h.01c6.53 0 11.84-5.31 11.84-11.84 0-3.16-1.23-6.13-3.41-8.41zM12.09 21.7h-.01a9.83 9.83 0 0 1-5.01-1.37l-.36-.21-3.79.99 1.01-3.7-.23-.38a9.85 9.85 0 1 1 8.39 4.67zm5.41-7.38c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.94 1.18-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.49 1.69.63.71.23 1.35.2 1.86.12.57-.08 1.78-.73 2.03-1.43.25-.7.25-1.3.17-1.43-.07-.12-.27-.2-.57-.35z"/>
+<path d="M20.52 3.48A11.84 11.84 0 0 0 12.08 0C5.55 0 .24 5.31.24 11.84c0 2.09.55 4.13 1.6 5.93L.16 24l6.38-1.67a11.84 11.84 0 0 0 5.54 1.4h.01c6.53 0 11.84-5.31 11.84-11.84 0-3.16-1.23-6.13-3.41-8.41zM12.09 21.7h-.01a9.83 9.83 0 0 1-5.01-1.37l-.36-.21-3.79.99 1.01-3.7-.23-.38a9.85 9.85 0 1 1 8.39 4.67zm5.41-7.38c-.3-.15-1.78-.88-2.05-.98-.27-.1-1.18-.58-1.45-.68-.27-.1-.47-.15-.67.15-.2.3-.77.98-.94 1.18-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.2-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.49 1.69.63.71.23 1.35.2 1.86.12.57-.08 1.78-.73 2.03-1.43.25-.7.25-1.3.17-1.43-.07-.12-.27-.2-.57-.35z"/>
 
-    </svg>
+</svg>
 
 </a>
 
 
-
-<!-- =========================================
-     JAVASCRIPT
-========================================= -->
-
 <script>
 
-    /* =========================================
-       NAVBAR SCROLL EFFECT
-    ========================================= */
+/* NAVBAR */
 
-    const header = document.getElementById("header");
+const header = document.getElementById("header");
 
-    window.addEventListener("scroll", () => {
+window.addEventListener("scroll", () => {
 
-        if (window.scrollY > 50) {
+header.classList.toggle(
+"scrolled",
+window.scrollY > 40
+);
 
-            header.classList.add("scrolled");
-
-        } else {
-
-            header.classList.remove("scrolled");
-
-        }
-
-    });
+});
 
 
+/* MOBILE MENU */
 
-    /* =========================================
-       MOBILE MENU
-    ========================================= */
+const menu = document.getElementById("menu");
 
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.getElementById("navLinks");
+const navLinks =
+document.getElementById("navLinks");
 
-    menuBtn.addEventListener("click", () => {
+menu.addEventListener("click", () => {
 
-        navLinks.classList.toggle("active");
+navLinks.classList.toggle("active");
 
-        if (navLinks.classList.contains("active")) {
+menu.textContent =
+navLinks.classList.contains("active")
+? "✕"
+: "☰";
 
-            menuBtn.innerHTML = "✕";
-
-        } else {
-
-            menuBtn.innerHTML = "☰";
-
-        }
-
-    });
+});
 
 
-    /* Close menu when clicking a link */
+document.querySelectorAll(".nav-links a").forEach(link => {
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+link.addEventListener("click", () => {
 
-        link.addEventListener("click", () => {
+navLinks.classList.remove("active");
 
-            navLinks.classList.remove("active");
+menu.textContent = "☰";
 
-            menuBtn.innerHTML = "☰";
+});
 
-        });
-
-    });
+});
 
 
+/* FAQ */
 
-    /* =========================================
-       FAQ ACCORDION
-    ========================================= */
+document.querySelectorAll(".faq-question").forEach(button => {
 
-    const faqItems = document.querySelectorAll(".faq-item");
+button.addEventListener("click", () => {
 
-    faqItems.forEach(item => {
+const item = button.parentElement;
 
-        const question = item.querySelector(".faq-question");
+document.querySelectorAll(".faq-item").forEach(other => {
 
-        question.addEventListener("click", () => {
+if (other !== item) {
+other.classList.remove("active");
+}
 
-            faqItems.forEach(otherItem => {
+});
 
-                if (otherItem !== item) {
+item.classList.toggle("active");
 
-                    otherItem.classList.remove("active");
+});
 
-                }
-
-            });
-
-            item.classList.toggle("active");
-
-        });
-
-    });
+});
 
 
+/* SCROLL ANIMATION */
 
-    /* =========================================
-       SCROLL REVEAL
-    ========================================= */
+const observer =
+new IntersectionObserver(
 
-    const revealElements =
-        document.querySelectorAll(".reveal");
+entries => {
 
-    const revealObserver =
-        new IntersectionObserver(
-            (entries) => {
+entries.forEach(entry => {
 
-                entries.forEach(entry => {
+if (entry.isIntersecting) {
 
-                    if (entry.isIntersecting) {
+entry.target.classList.add("show");
 
-                        entry.target.classList.add("visible");
+observer.unobserve(entry.target);
 
-                        revealObserver.unobserve(entry.target);
+}
 
-                    }
+});
 
-                });
+},
 
-            },
-            {
-                threshold: 0.12
-            }
-        );
+{
+threshold: .1
+}
+
+);
 
 
-    revealElements.forEach(element => {
+document.querySelectorAll(".reveal").forEach(element => {
 
-        revealObserver.observe(element);
+observer.observe(element);
 
-    });
+});
 
 
+/* YEAR */
 
-    /* =========================================
-       CURRENT YEAR
-    ========================================= */
-
-    document.getElementById("year").textContent =
-        new Date().getFullYear();
+document.getElementById("year").textContent =
+new Date().getFullYear();
 
 </script>
-
 
 </body>
 </html>
